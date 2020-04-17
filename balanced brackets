@@ -1,0 +1,38 @@
+static String isBalanced(String s) {
+        Stack<Character>Stack=new Stack();
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)=='('||s.charAt(i)=='{'||s.charAt(i)=='[')
+            {
+                Stack.push(s.charAt(i));
+            }else{
+                if(Stack.isEmpty())
+                {
+                    return "NO";
+                }else{
+                    char pop_val=Stack.pop();
+                    if(s.charAt(i)==')'&&pop_val!='(')
+                    {
+                        return "NO";
+                    }
+                     if(s.charAt(i)=='}'&&pop_val!='{')
+                    {
+                        return "NO";
+                    }
+                     if(s.charAt(i)=='['&&pop_val!=']')
+                    {
+                        return "NO";
+                    }
+                }
+            }
+        }
+
+      if(Stack.isEmpty())
+      {
+          return "YES";
+
+      }else
+      {
+          return "NO";
+      }
+
+    }
