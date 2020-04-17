@@ -1,0 +1,21 @@
+static DoublyLinkedListNode reverse(DoublyLinkedListNode head) {
+        if(head==null){
+        return head;}
+        DoublyLinkedListNode cur_node=head;
+        DoublyLinkedListNode new_head=head;
+
+   while(cur_node!=null)
+   {
+     DoublyLinkedListNode prev=cur_node.prev;
+      cur_node.prev=cur_node.next;
+       cur_node.next=prev;
+       new_head=cur_node;
+
+       cur_node=cur_node.prev;
+   }
+return new_head;
+
+
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
