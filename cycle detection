@@ -1,0 +1,18 @@
+ static boolean hasCycle(SinglyLinkedListNode head) {
+        if(head==null)return false;
+        SinglyLinkedListNode first=head;
+        SinglyLinkedListNode second=head.next;
+        while(second!=null&&second.next!=null)
+        {
+            if(first==second)
+            {
+                return true;
+            }
+            first=first.next;
+            second=second.next.next;
+        }
+
+    return false;
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
