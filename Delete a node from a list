@@ -1,0 +1,23 @@
+static SinglyLinkedListNode deleteNode(SinglyLinkedListNode head, int position) {
+        if(head==null)
+        {
+          return head;
+        }
+        if(position==0)
+        {        return(head.next);
+        }
+          SinglyLinkedListNode cur_node=head;
+         
+for(int index=1;index<position;++index)
+     {
+          
+       cur_node=cur_node.next;
+
+    }
+     
+      cur_node.next=cur_node.next.next;
+      return head;
+      
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
